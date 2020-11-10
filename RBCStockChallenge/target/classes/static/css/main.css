@@ -1,0 +1,38 @@
+body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+h1{
+    color:#0000FF;
+    font-size: 50px;
+}
+
+h2{
+    color:#000000;
+    font-size: 30px;
+}
+button{
+	padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+container {
+   text-align:center;
+} 
+my-button {
+   
+    display: inline-block;
+    margin: 20px; /* space between buttons */
+}
+

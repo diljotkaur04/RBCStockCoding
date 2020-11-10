@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dow jones index - List Stocks</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+             <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+ <div class="my-button">
+        <button type="button" onclick="window.location.href='/stock/new'">Add new stock record</button>
+          <button type="button" onclick="window.location.href='/stock/upload'">Upload stock data file</button>
+           <button type="button" onclick="window.location.href='/stock/list'">List all stocks</button>
+           <br>
+           <br>
+          <form class="form-horizontal"  th:action="@{/stock/search}" method="post"> 
+                <div class="my-button">
+                    <input type="text" class="form-control" name="ticker" placeholder="Enter a Stock ticker value" id="ticker" />
+
+                     <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+          </form>
+</div>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(stocks)}">
+        <h2>Stock List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Quarter</th>
+                <th>Stock</th>
+                <th>Date</th> 
+                <th>Open</th>
+                <th>High</th>
+                <th>Low</th>
+                <th>Close</th>
+                <th>Volume</th>
+                <th>Percent Change Price</th>
+                <th>Percent Change Price last week</th>
+                <th>Previous week volume</th>
+                <th>Next weeks open</th>
+                <th>Next weeks close</th>
+                <th>Percent change next week price</th>
+                <th>Days to next dividend</th>
+                <th>Percent return next dividend</th>
+                
+            </tr>
+            <tr th:each="stock : ${stocks}"> 
+            <td th:text="${stock.quarter}"></td>
+                <td th:text="${stock.stock}"></td>
+                 <td th:text="${stock.date}"></td>
+                <td th:text="${stock.open}"></td>
+                <td th:text="${stock.high}"></td> 
+                <td th:text="${stock.low}"></td> 
+                <td th:text="${stock.close}"></td> 
+                 <td th:text="${stock.volume}"></td>
+                 <td th:text="${stock.percent_change_price}"></td>
+                 <td th:text="${stock.percent_change_volume_over_last_wk}"></td>
+                 <td th:text="${stock.previous_weeks_volume}"></td>
+                 <td th:text="${stock.next_weeks_open}"></td>
+                 <td th:text="${stock.next_weeks_close}"></td>
+                 <td th:text="${stock.percent_change_next_weeks_price}"></td>
+                 <td th:text="${stock.days_to_next_dividend}"></td>
+                 <td th:text="${stock.percent_return_next_dividend}"></td>
+            </tr>
+        </table>
+    </div>
+   
+</div>
+
+</body>
+</html>

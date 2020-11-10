@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Dow Jones</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    
+
+</head>
+
+<body th:style="'background: url(/img/d.jpg)'">
+
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    
+</nav>
+
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <h1>DOW JONES STOCK DATA</h1>
+        <h2>
+            <span th:text="'Welcome!'"></span>
+            <br>
+            <br>
+            <button type="button" onclick="window.location.href='/stock/options'">Continue...</button>
+           
+        </h2>
+    </div>
+</main>
+<!-- /.container -->
+
+<script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
+</body>
+</html>

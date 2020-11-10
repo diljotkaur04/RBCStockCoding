@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dow jones index - List Stocks</title>
+       <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Dow Jones</title>
+
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+ <div class="my-button">
+        <button type="button" onclick="window.location.href='/stock/new'">Add new stock record</button>
+          <button type="button" onclick="window.location.href='/stock/upload'">Upload stock data file</button>
+           <button type="button" onclick="window.location.href='/stock/list'">List all stocks</button>
+           <br>
+           <br>
+          <form class="form-horizontal"  th:action="@{/stock/search}" method="post"> 
+                <div class="my-button">
+                    <input type="text" class="form-control" name="ticker" placeholder="Enter a Stock ticker value" id="ticker" />
+
+                     <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+          </form>
+</div>
+</body>
+</html>
